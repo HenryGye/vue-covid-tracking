@@ -1,26 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Hello Vue 2 + Vite" />
+    <b-container fluid>
+      <NavBar />
+      <div class="p-4 text-center">
+        <SearchCountries />
+        <router-view />
+      </div>
+    </b-container>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import NavBar from "./components/NavBar.vue";
+import SearchCountries from "./components/SearchCountries.vue";
 export default {
   components: {
-    HelloWorld,
-  },
+    NavBar,
+    SearchCountries,
+  }
 };
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.container-fluid {
+  padding: 0 !important;
+}
+
+#nav-collapse a.active-routes {
+  color: white;
 }
 </style>
